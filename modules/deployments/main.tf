@@ -47,11 +47,11 @@ resource "aws_ecs_task_definition" "my_php_app" {
 #   execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
 }
 
-resource "kubernetes_namespace" "test" {
-   metadata {
-     name = "nginx"
-   }
-}
+# resource "kubernetes_namespace" "test" {
+#    metadata {
+#      name = "nginx"
+#    }
+# }
 
 
 # resource "kubernetes_deployment" "test" {
