@@ -27,7 +27,7 @@ resource "aws_ecs_task_definition" "my_php_app" {
   [
     {
       "name": "php",
-      "image": "${aws_ecr_repository.web.repository_url}",
+      "image": "097084951758.dkr.ecr.us-east-1.amazonaws.com/web:latest",
       "essential": true,
       "portMappings": [
         {
