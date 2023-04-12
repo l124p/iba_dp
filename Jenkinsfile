@@ -9,16 +9,6 @@ pipeline {
                 git url: 'https://github.com/l124p/iba_dp.git', branch: 'main'
             }
         }
-        stage("set env variabl"){
-            steps{
-                sh 'export AWS_PROFILE=aws'
-            }
-        }
-        stage('Get Directory') {
-            steps{
-                println(WORKSPACE)
-            }
-        }
         stage('Terraform init'){
             steps{
                 withCredentials([[
