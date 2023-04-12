@@ -1,5 +1,5 @@
 variable "env" {
-  default = "dev-dp-l124"
+  default = "DP-l124"
 }
 
 variable "vpc_cidr" {
