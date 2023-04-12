@@ -31,6 +31,9 @@ module "aws_ecr_repository"{
 #   source = "./modules/dynamo"
 # }
 
+module "aws_network" {
+   source = "./modules/deployments"
+ }
 
 
 
