@@ -1,7 +1,9 @@
+#-------------AWS Network----------------------------------------
 module "aws_network" {
     source = "../aws_network"
 }
 
+#-------------EKS Cluster----------------------------------------
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.12"
@@ -20,6 +22,7 @@ module "eks" {
   #   ami_type = "AL2_x86_64"
   # }
 
+#-------------Node groups cluster----------------------------------------
   eks_managed_node_groups = {
     l124-node-DP = {
   
