@@ -28,6 +28,7 @@ module "eks" {
     tags = {
       Environment = "DP"
       Terraform   = "true"
+      github   = "true"
     }
     }
   }
