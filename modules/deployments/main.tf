@@ -47,43 +47,43 @@ resource "aws_ecs_task_definition" "my_php_app" {
 #   execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
 }
 
-# resource “kubernetes_namespace” “test” {
-#   metadata {
-#     name = “nginx”
-#   }
-# }
+resource "kubernetes_namespace" "test" {
+   metadata {
+     name = “nginx”
+   }
+}
 
 
-# resource “kubernetes_deployment” “test” {
-#   metadata {
-#     name      = “nginx”
-#     namespace = kubernetes_namespace.test.metadata.0.name
-#   }
-#   spec {
-#     replicas = 2
-#     selector {
-#       match_labels = {
-#         app = “MyTestApp”
-#       }
-#     }
-#     template {
-#       metadata {
-#         labels = {
-#           app = “MyTestApp”
-#         }
-#       }
-#       spec {
-#         container {
-#           image = “nginx”
-#           name  = “nginx-container”
-#           port {
-#             container_port = 80
-#           }
-#         }
-#       }
-#     }
-#   }
-# }
+resource "kubernetes_deployment" "test" {
+  metadata {
+    name      = "nginx"
+    namespace = kubernetes_namespace.test.metadata.0.name
+  }
+  spec {
+    replicas = 2
+    selector {
+      match_labels = {
+        app = "MyTestApp"
+      }
+    }
+    template {
+      metadata {
+        labels = {
+          app = "MyTestApp"
+        }
+      }
+      spec {
+        container {
+          image = "nginx"
+          name  = "nginx-container"
+          port {
+            container_port = 80
+          }
+        }
+      }
+    }
+  }
+}
 # resource “kubernetes_service” “test” {
 #   metadata {
 #     name      = “nginx”
