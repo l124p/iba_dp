@@ -47,17 +47,17 @@
 # #   execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
 # }
 
-resource "kubernetes_namespace" "test" {
-   metadata {
-     name = "nginx"
-   }
-}
+# resource "kubernetes_namespace" "test" {
+#    metadata {
+#      name = "nginx"
+#    }
+# }
 
 
 resource "kubernetes_deployment" "test" {
   metadata {
     name      = "nginx"
-    namespace = kubernetes_namespace.test.metadata.0.name
+    #namespace = kubernetes_namespace.test.metadata.0.name
   }
   spec {
     replicas = 2
