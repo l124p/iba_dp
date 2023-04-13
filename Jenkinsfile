@@ -4,6 +4,12 @@ pipeline {
         terraform 'terraform'
     }
     stages{
+        stage('Install AWS CLI') {
+           steps {
+            sh 'sudo apt-get update'
+            sh 'sudo apt-get install awscli -y'
+            }
+        }
         stage('Git Checkout'){
             steps{
                 git url: 'https://github.com/l124p/iba_dp.git', branch: 'main'
