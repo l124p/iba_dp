@@ -6,8 +6,8 @@ pipeline {
     stages{
         stage('Install AWS CLI') {
            steps {
-            sh 'sudo apt-get update'
-            sh 'sudo apt-get install awscli -y'
+            sh 'apt-get update'
+            sh 'apt-get install awscli -y'
             }
         }
         stage('Git Checkout'){
