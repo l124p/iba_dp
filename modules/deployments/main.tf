@@ -8,6 +8,7 @@ resource "kubernetes_deployment" "php-web" {
   }
 
   spec {
+    replicas = 2
     selector {
       match_labels = {
         app = "php-web"
