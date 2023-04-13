@@ -38,3 +38,8 @@ locals {
   }
 }
 
+
+output "region" {
+  description = "The region"
+  value       = local.region
+}
