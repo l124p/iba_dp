@@ -29,7 +29,7 @@ data "aws_availability_zones" "available" {}
 
 
 locals {
-  name   = "ex-${replace(basename(path.cwd), "_", "-")}"
+  name   = "iba-dp"
   region = "us-east-1"
 
   tags = {

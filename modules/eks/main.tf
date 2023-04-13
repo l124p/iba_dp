@@ -8,7 +8,7 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.12"
 
-  cluster_name    = "l124-DP-Cluster"
+  cluster_name    = "l124-dp-Cluster"
   cluster_version = "1.25"
    
  
@@ -33,7 +33,6 @@ module "eks" {
     tags = {
       Environment = "DP"
       Terraform   = "true"
-      github_webhook   = "true"
     }
     }
   }
