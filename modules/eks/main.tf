@@ -17,6 +17,12 @@ module "eks" {
   cluster_endpoint_public_access = true
 
   cluster_encryption_config = {}
+  tags = {
+    Environment = "DP"
+    Terraform   = "true"
+    Owner   = "Andry Peshko"
+    Project = "DP IBA"
+  }
 
   # eks_managed_node_group_defaults = {
   #   ami_type = "AL2_x86_64"
