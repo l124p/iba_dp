@@ -33,6 +33,8 @@ module "eks" {
     tags = {
       Environment = "DP"
       Terraform   = "true"
+      Owner   = "Andry Peshko"
+      Project = "DP IBA"
     }
     }
   }
