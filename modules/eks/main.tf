@@ -8,8 +8,8 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.12"
 
-  cluster_name    = "l124-dp-Cluster"
-  cluster_version = "1.25"
+  cluster_name    = var.cluster_name
+  cluster_version = var.cluster_version
    
  
   vpc_id                         = module.aws_network.vpc_id
@@ -17,12 +17,7 @@ module "eks" {
   cluster_endpoint_public_access = true
 
   cluster_encryption_config = {}
-  tags = {
-    Environment = "DP"
-    Terraform   = "true"
-    Owner   = "Andry Peshko"
-    Project = "DP IBA"
-  }
+  tags = var.tags
 
   # eks_managed_node_group_defaults = {
   #   ami_type = "AL2_x86_64"
@@ -32,17 +27,11 @@ module "eks" {
   eks_managed_node_groups = {
     l124-node-DP = {
   
-      instance_types = ["t2.micro"]
-      min_size     = 2
-      max_size     = 4
-      desired_size = 2
-    tags = {
-      Environment = "DP"
-      Terraform   = "true"
-      Owner   = "Andry Peshko"
-      Project = "DP IBA"
-    }
+      instance_types = [var.instance.types]
+      min_size       = var.instance.min_size
+      max_size       = var.instance.max_size
+      desired_size   = var.instance.desired_size
+    tags = var.tags
     }
   }
- 
 }

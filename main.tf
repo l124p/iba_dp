@@ -34,7 +34,7 @@ locals {
 
   tags = {
     Example    = local.name
-    GithubRepo = "terraform-aws-eks"
+    GithubRepo = "l124p/iba_dp"
   }
 }
 
