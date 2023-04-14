@@ -20,7 +20,7 @@ module "eks" {
   tags = var.tags
 
   # eks_managed_node_group_defaults = {
-  #   ami_type = "AL2_x86_64"
+  #   ami_type = var.ami_type
   # }
 
 #-------------Node groups cluster----------------------------------------

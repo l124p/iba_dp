@@ -19,6 +19,7 @@ variable "cluster_version" {
 #--------Node--------------
 variable "instance" {
   default = {
+    ami_type = "AL2_x86_64"
     types = "t2.micro"
     min_size     = 2
     max_size     = 4
